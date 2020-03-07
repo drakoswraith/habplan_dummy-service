@@ -32,16 +32,24 @@ hab pkg build
 . ./results/last_build.env
 hab pkg upload $pkg_artifact
 hab pkg promote $pkg_ident uac x86_64-linux
-
-
-On test system:
 ```
-# in first command prompt
+
+On test system, open two command prompts:
+
+In first command prompt:
+```
 hab sup run --auto-update --strategy at-once
+```
 
-# in second command prompt
+
+In second command prompt (windows):
+```
 hab svc load michaellehman/dummy-service --strategy at-once --channel uac
-
-# watch svc output, or use tail -f on linux
 get-content c:\hab\svc\dummy-service\data\touchfile.txt -wait
+```
+
+In second command prompt (linux):
+```
+hab svc load michaellehman/dummy-service --strategy at-once --channel uac
+tail -f /hab/svc/dummy-service/data/touchfile.txt
 ```
