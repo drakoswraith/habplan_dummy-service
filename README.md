@@ -4,6 +4,10 @@ This plan provides a service that does nothing to allow testing of Habitat work 
 
 # Demo Update Strategies
 
+
+In these examples.. replace the origin or builder URL as needed! This was built and tested using private origins and test systems which may differ from yours.
+
+
 Overview:
 
 1. Set the HAB environment variables
@@ -42,7 +46,7 @@ hab sup run --auto-update --strategy at-once
 ```
 
 
-In second command prompt (windows):
+In second command prompt (windows) :
 ```
 hab svc load michaellehman/dummy-service --strategy at-once --channel uac
 get-content c:\hab\svc\dummy-service\data\touchfile.txt -wait
